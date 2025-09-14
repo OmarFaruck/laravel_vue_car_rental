@@ -1,0 +1,7 @@
+ Navber , Slider , Categories,
+
+ Sub_Categories, Text_Animation, Review ,
+
+ Customer_Suport , Subscribe ,Contact_Us ,
+
+ Ammin & User Register + Login , Social_Login , 
