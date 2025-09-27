@@ -11,8 +11,14 @@ use Illuminate\Support\Facades\Hash;
 class RegisterController extends Controller
 {
     
-    public function register_page()
+    public function register_page(Request $request)
     {
+          $email=$request->session()->get('email','default'); //dd($email);
+
+        if($email != 'default') {
+            return redirect()->route('DashboardPage');
+        }
+
         return Inertia::render('Admin/User/Register');
     }
    
@@ -34,7 +40,8 @@ class RegisterController extends Controller
                         session()->flash('status', true);
                         session()->flash('error', '');
 
-                        return  redirect()->route('RegistrationPage');
+                        // return  redirect()->route('/');
+                        return  redirect()->route('registerPage');
                     }
                     catch (\Exception $e) {
                         session()->flash('message', 'Registration Fail');

@@ -70,7 +70,7 @@
             </a>
           </div>
 
-          <a href="/Admin/User/login_page" class="text-center">I already have a membership</a>
+          <Link href="/Admin/User/login_page" class="text-center">I already have a membership</Link>
         </div>
         <!-- /.form-box -->
       </div><!-- /.card -->
@@ -79,7 +79,7 @@
 </template>
 
 <script setup lang="ts">
-import { router, useForm, usePage } from '@inertiajs/vue3';
+import { Link, router, useForm, usePage } from '@inertiajs/vue3';
 
 const form = useForm({ name: "", email: "", password: "", confirm_password: "" })
 

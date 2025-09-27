@@ -10,14 +10,21 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-      public function login_page()
+      public function login_page(Request $request)
     {
+          $email=$request->session()->get('email','default'); //dd($email);
+
+        if($email != 'default') {
+            return redirect()->route('DashboardPage');
+        }
+        
         return Inertia::render('Admin/User/Login');
     }
 
 
       public function login(Request $request)
     {
+        // Retrieving the user by email
          $user = User::where('email', $request->input('email'))->first();
 
         // Checking if user exists and verify password
@@ -28,9 +35,9 @@ class LoginController extends Controller
             
             $email=$request->input('email');
             $request->session()->put('email',$email);
-            // $request->session()->put('user_id',$user->id);
-            // $request->session()->put('name',$user->name);
-            // $request->session()->put('role',$user->role);
+            $request->session()->put('user_id',$user->id);
+            $request->session()->put('name',$user->name);
+            $request->session()->put('role',$user->role);
 
             session()->flash('message', 'Login Successful');
             session()->flash('status', true);
@@ -49,11 +56,11 @@ class LoginController extends Controller
 
     }    
 
-    function log_out(Request $request){
-//        echo 'logout'; exit;
+    public function logOut(Request $request){
+ 
         $request->session()->invalidate();
-        $request->session()->regenerateToken();
-        return redirect()->route('/Admin/User/logOut');
+        $request->session()->regenerateToken(); 
+        return redirect()->route('login_page');
 
     }    
     }

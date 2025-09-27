@@ -58,7 +58,7 @@
         <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="/Admin/User/register_page" class="text-center">Register a new membership</a>
+        <Link href="/Admin/User/register_page" class="text-center">Register a new membership</Link>
       </p>
     </div>
     <!-- /.card-body -->
@@ -69,7 +69,7 @@
  </template>
 
  <script setup lang="ts">
-import { useForm, router, usePage } from '@inertiajs/vue3';
+import { useForm, router, usePage, Link } from '@inertiajs/vue3';
 import { createToaster } from "@meforma/vue-toaster";
 const toaster = createToaster();
 

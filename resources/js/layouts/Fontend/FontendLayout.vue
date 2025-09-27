@@ -137,8 +137,10 @@
                                     class="fab fa-twitter text-white"></i></a>
                             <a class="btn btn-secondary btn-md-square rounded-circle me-3" href=""><i
                                     class="fab fa-instagram text-white"></i></a>
-                            <a class="btn btn-secondary btn-md-square rounded-circle me-0" href=""><i
-                                    class="fab fa-linkedin-in text-white"></i></a>
+                          <Link class="btn btn-secondary btn-md-square rounded-circle me-0" href="/Admin/User/logOut">
+                          <!-- <Link class="btn btn-secondary btn-md-square rounded-circle me-0" :href="route('user.log_out')"> -->
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -146,30 +148,13 @@
         </div>
     </div>
     <!-- Footer End -->
-
-    <!-- Copyright Start -->
-    <div class="container-fluid copyright py-4">
-        <div class="container">
-            <div class="row g-4 align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-md-0">
-                    <span class="text-body"><a href="#" class="border-bottom text-white"><i
-                                class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right
-                        reserved.</span>
-                </div>
-                <div class="col-md-6 text-center text-md-end text-body"> 
-                    Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Copyright End -->
-
-
+ 
   </template>
 
   
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
+// import { route } from 'ziggy-js';
 
-
+ 
 </script>
